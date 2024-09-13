@@ -1,0 +1,23 @@
+{
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.typeCheckingMode": "basic",
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": "always",
+    },
+    "editor.formatOnSave": true,
+    "python.analysis.importFormat": "relative",
+    "python.analysis.packageIndexDepths": [
+        {
+            "name": "fastapi",
+            "depth": 2
+        },
+        {
+            "name": "comic_ocr",
+            "depth": 5
+        },
+        {
+            "name": "PIL",
+            "depth": 2
+        },
+    ]
+}

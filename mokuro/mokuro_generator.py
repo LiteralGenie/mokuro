@@ -11,9 +11,11 @@ from mokuro.volume import Volume
 
 class MokuroGenerator:
     def __init__(
-        self, pretrained_model_name_or_path="kha-white/manga-ocr-base", force_cpu=False, disable_ocr=False, **kwargs
+        self,
+        force_cpu=False,
+        disable_ocr=False,
+        **kwargs,
     ):
-        self.pretrained_model_name_or_path = pretrained_model_name_or_path
         self.force_cpu = force_cpu
         self.disable_ocr = disable_ocr
         self.kwargs = kwargs
@@ -22,7 +24,6 @@ class MokuroGenerator:
     def init_models(self):
         if self.mpocr is None:
             self.mpocr = MangaPageOcr(
-                self.pretrained_model_name_or_path,
                 force_cpu=self.force_cpu,
                 disable_ocr=self.disable_ocr,
                 **self.kwargs,
@@ -33,7 +34,9 @@ class MokuroGenerator:
 
         if volume.mokuro_data is not None:
             for page in volume.mokuro_data["pages"]:
-                json_path = (volume.path_ocr_cache / page["img_path"]).with_suffix(".json")
+                json_path = (volume.path_ocr_cache / page["img_path"]).with_suffix(
+                    ".json"
+                )
                 if json_path.is_file():
                     continue
                 json_path.parent.mkdir(parents=True, exist_ok=True)
