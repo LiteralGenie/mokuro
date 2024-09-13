@@ -15,10 +15,12 @@ def run(
     *paths: Optional[Sequence[Union[str, Path]]],
     det_arch: str = "db_resnet50",
     det_weights: Path | None = Path(
-        "./db_resnet50_20240815-081119_0.0807676_0.88_0.89.pt"
+        "./data/db_resnet50_20240815-081119_0.0807676_0.88_0.89.pt"
     ),
     reco_arch: str = "parseq",
-    reco_weights: Path | None = Path("./parseq_20240816-150838_0.450588_0.87_0.87.pt"),
+    reco_weights: Path | None = Path(
+        "./data/parseq_20240816-150838_0.450588_0.87_0.87.pt"
+    ),
     max_ocr_width: int = 1200,
     parent_dir: Optional[Union[str, Path]] = None,
     force_cpu: bool = False,
