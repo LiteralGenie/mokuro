@@ -1,3 +1,7 @@
+For https://github.com/LiteralGenie/comic_ocr/issues/1
+
+-----------
+
 # mokuro
 
 Read Japanese manga with selectable text inside a browser.
